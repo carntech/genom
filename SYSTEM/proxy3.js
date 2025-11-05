@@ -56,7 +56,7 @@ const server = net.createServer();
 server.on('connection', function(socket) {
     var packetCount = 0;
     //var handshakeMade = false;
-    socket.write("HTTP/1.1 101 BY carntech\r\nContent-Length: 1048576000000\r\n\r\n", function(err) {
+    socket.write("HTTP/1.1 101 <b><font color="green">Carntech</font><p style="text-align:center"><b><font color="#EC5800"><b>Cloudfront</font><font color="#73C2FB">Tele</font><font color="white">:</font><b><font color="#008080">t.me/gretzallsc</font></b>\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: foo\r\n\r\n", function(err) {
         if(err) {
             console.log("[SWRITE] Failed to write response to " + socket.remoteAddress + ":" + socket.remotePort + ", error: " + err);
         }
