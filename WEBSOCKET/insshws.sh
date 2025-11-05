@@ -7,7 +7,7 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/carntech/ge
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
-cat > /etc/systemd/system/ws-nontls.service << END
+cat > /etc/systemd/system/ws-nontls.service 
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/abecasdee
@@ -24,7 +24,6 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-END
 
 sudo systemctl status dropbear.service
 sudo systemctl restart dropbear.service
@@ -35,7 +34,7 @@ wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/carntech/genom/
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
-cat > /etc/systemd/system/ws-ovpn.service << END
+cat > /etc/systemd/system/ws-ovpn.service 
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
@@ -52,7 +51,6 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-END
 
 systemctl daemon-reload
 systemctl enable ws-ovpn
@@ -62,7 +60,7 @@ wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/carntech/gen
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service
-cat > /etc/systemd/system/ws-stunnel.service << END
+cat > /etc/systemd/system/ws-stunnel.service
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
@@ -79,7 +77,6 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-END
 
 systemctl enable ws-stunnel.service
 systemctl start ws-stunnel.service
