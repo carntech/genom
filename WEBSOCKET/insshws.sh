@@ -7,10 +7,10 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/carntech/ge
 chmod +x /usr/local/bin/ws-dropbear
 
 # Installing Service
-cat > /etc/systemd/system/ws-nontls.service
+cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
-Documentation=https://t.me/carntech
+Documentation=https://t.me/abecasdee
 After=network.target nss-lookup.target
 
 [Service]
@@ -35,7 +35,7 @@ wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/carntech/genom/
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
-cat > /etc/systemd/system/ws-ovpn.service
+cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
@@ -62,7 +62,7 @@ wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/carntech/gen
 chmod +x /usr/local/bin/ws-stunnel
 
 # Installing Service
-cat > /etc/systemd/system/ws-stunnel.service
+cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
