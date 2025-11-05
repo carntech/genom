@@ -15,7 +15,7 @@ BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:109'
 # String harus di-encode saat dikirim melalui socket
-RESPONSE = 'HTTP/1.1 101 <b><font color="green">Carntech</font><p style="text-align:center"><b><font color="green"><b>.</font><font color="#8A95FF">.</font><font color="#3FFFAD">. </font><b><font color="red">cloudfront</font></b>\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: foo\r\n\r\n'
+RESPONSE = 'HTTP/1.1 101 <b><font color="green">Carntech</font><p style="text-align:center"><b><font color="#EC5800"><b>Cloudfront</font><font color="#73C2FB">Tele</font><font color="white">:</font><b><font color="#008080">t.me/gretzallsc</font></b>\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: foo\r\n\r\n'
 # Catatan: Bagian HTML seperti <b><font color="green"> tidak akan berfungsi di sini,
 # Karena ini adalah respons HTTP biasa, bukan konten web. Saya menggantinya
 # dengan escape sequence ANSI untuk warna hijau jika terminal mendukungnya,
