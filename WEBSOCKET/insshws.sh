@@ -4,13 +4,15 @@
 
 
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-dropbear
+wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-dropbear.service
 chmod +x /usr/local/bin/ws-dropbear
+chmod +x /etc/systemd/system/ws-dropbear.service
 
 # Installing Service
-cat > /etc/systemd/system/ws-nontls.service 
+cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
-Documentation=https://t.me/abecasdee
+Documentation=https://t.me/carntech
 After=network.target nss-lookup.target
 
 [Service]
@@ -24,17 +26,21 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+END
 
-sudo systemctl status dropbear.service
-sudo systemctl restart dropbear.service
-sudo systemctl enable dropbear.service
+sudo systemctl status ws.dropbear.service
+sudo systemctl start ws.dropbear.service
+sudo systemctl enable ws.dropbear.service
+sudo systemctl restart ws-dropbear.service
 sudo systemctl restart ws-nontls.service
 
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-ovpn.py
+wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-ovpn.service
 chmod +x /usr/local/bin/ws-ovpn
+chmod +x /etc/systemd/system/ws-ovpn.service
 
 # Installing Service
-cat > /etc/systemd/system/ws-ovpn.service 
+cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
@@ -51,16 +57,21 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+END
 
 systemctl daemon-reload
-systemctl enable ws-ovpn
-systemctl restart ws-ovpn
+systemctl enable ws-ovpn.service
+systemctl start ws-ovpn.service
+systemctl enable ws-ovpn.service
+systemctl restart ws-ovpn.service
 
 wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-stunnel
+wget -O /etc/systemd/system/ws-stunnel.service https://raw.githubusercontent.com/carntech/genom/refs/heads/main/WEBSOCKET/ws-stunnel.service
 chmod +x /usr/local/bin/ws-stunnel
+chmod +x /etc/systemd/system/ws-stunnel.service
 
 # Installing Service
-cat > /etc/systemd/system/ws-stunnel.service
+cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By carntech
 Documentation=https://t.me/carntech
@@ -77,9 +88,12 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+END
 
 systemctl enable ws-stunnel.service
 systemctl start ws-stunnel.service
-systemctl restart ws-stunnel.service
-sudo systemctl daemon-reload
 sudo systemctl restart ws-stunnel.service
+systemctl daemon-reload
+systemctl enable ws-nontls.service
+systemctl start ws-nontls.service
+systemctl restart ws-nontls.service
